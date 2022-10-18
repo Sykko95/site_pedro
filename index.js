@@ -5,6 +5,8 @@ const pokemonName = document.getElementById("pokemon__name");
 const pokemonData = document.getElementById("pokemon__data");
 const pokemonImg = document.querySelector(".pokemon__img");
 const pokemonType = document.querySelector(".pokemon__type");
+const pokemonAblts = document.getElementById("pokemon__ablts");
+const pokemonGolpes = document.getElementById("pokemon__golpes")
 
 const fetchPokemon = async (pokemon) => {
     return  (await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).json()
@@ -15,11 +17,25 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
     pokemonName.innerHTML = data.name;
     pokemonImg.src = data.sprites.versions['generation-v']['black-white'].animated.front_default
+    
     data.types.forEach((item) =>{
         let el = document.createElement("h2");
         el.innerHTML = item.type.name
         pokemonData.lastChild.after(el);
     })
+   pokemonAblts.innerHTML = "ABILIDADES"
+   data.abilities.forEach((item) =>{
+    let eli = document.createElement("h2");
+    eli.innerHTML = item.ability.name
+    pokemonAblts.lastChild.after(eli);
+})
+
+   pokemonGolpes.innerHTML = "GOLPES"
+   data.moves = forEach((item)=>{
+    let ae = document.createElement("h2")
+    ae.innerHTML = item.move.name
+    pokemonGolpes.lastChild.after(ae);
+   })
 }
 
 accordion_item.forEach((item) => {
@@ -53,7 +69,6 @@ function VerifyActive(item, content, content_actived) {
 }
 pesquisar.addEventListener('click' , (e) => {
     e.preventDefault()
-    console.log(textoPesquisa.value)
+    renderPokemon(textoPesquisa.value)
 })
 
-renderPokemon('130')

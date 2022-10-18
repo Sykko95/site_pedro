@@ -104,6 +104,16 @@ body {
     font-size: 20px;
     text-align: center;
     color: black;
-    
   }
+  .pokemon__ablts{
+    font-size: 20px;
+    text-align: center;
+    color: black;
+  }
+  .pokemon__golpes{
+    font-size: 20px;
+    text-align: center;
+    color: black;
+  }
+
   

@@ -4,9 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SITE PEDRO</title>
+    <title>Site Pokemom</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img class="img" src="pkm.png" >
+    <p> Pesquise seu pokémon aqui: </p>
+    <input class="caixa" type="text" placeholder="Ex:Pikachu" id="text"><br>
+    <input class="butao" type="submit" value="Pesquisar" id="pesquisar">
     
+    <div class="container">
+        <div class="content">
+          <div class="accordion_item" style="background-color:#ccc">
+            <div class="accordion_header">
+              <span>
+                Sobre
+              </span> 
+              <div class="icon">
+                +
+              </div>
+            </div>
+    
+            <div class="accordion_content">
+              <p>
+                <img class="pokemon__img"><br>
+                <h1 id ="pokemon__name"></h1>
+              </p>
+            </div>
+          </div>
+          <div class="accordion_item" style="background-color: #ccc">
+            <div class="accordion_header">
+              <span>
+              Abilidades
+              </span> 
+              <div class="icon">
+                +
+              </div>
+            </div>
+    
+            <div class="accordion_content">
+              <p>
+              Contem abilidades do pokemon
+            </div>
+          </div>
+          <div class="accordion_item" style="background-color: #ccc">
+            <div class="accordion_header">
+              <span>
+                Golpes 
+              </span> 
+              <div class="icon">
+                +
+              </div>
+            </div>
+    
+            <div class="accordion_content">
+              <p>
+                Contém Golpes  do pokémon
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+     
+
+
+
+    <script src="index.js" ></script>
 </body>
 </html>

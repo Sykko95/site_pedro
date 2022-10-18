@@ -2,7 +2,10 @@ const textoPesquisa = document.getElementById("text")
 const pesquisar =  document.getElementById("pesquisar")
 const accordion_item = document.querySelectorAll(".accordion_item");
 const pokemonName = document.getElementById("pokemon__name");
+const pokemonData = document.getElementById("pokemon__data");
 const pokemonImg = document.querySelector(".pokemon__img");
+const pokemonType = document.querySelector(".pokemon__type");
+
 const fetchPokemon = async (pokemon) => {
     return  (await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).json()
           
@@ -12,6 +15,11 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
     pokemonName.innerHTML = data.name;
     pokemonImg.src = data.sprites.versions['generation-v']['black-white'].animated.front_default
+    data.types.forEach((item) =>{
+        let el = document.createElement("h2");
+        el.innerHTML = item.type.name
+        pokemonData.lastChild.after(el);
+    })
 }
 
 accordion_item.forEach((item) => {
